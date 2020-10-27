@@ -4,7 +4,7 @@ from datetime import datetime
 import pymysql
 
 while (True):
-    conexao = pymysql.connect(host='10.35.18.40', db='almavivalayout', user='root', passwd='xcpo10tg', port=3306)
+    conexao = pymysql.connect(host='10.35.18.40', db='almavivalayout', user='root', passwd='', port=3306)
     i = 0
     count = 1000
     for i in range(0, 474):
