@@ -4,14 +4,12 @@ from datetime import datetime
 import pymysql
 
 while (True):
-    conexao = pymysql.connect(host='10.35.18.40', db='almavivalayout', user='root', passwd='', port=3306)
+    conexao = pymysql.connect(host='***', db='***', user='***', passwd='***', port=3306)
     i = 0
     count = 1000
     for i in range(0, 474):
-        cursor = conexao.cursor()
-        print (count)
-        maquina = 'sp0006pa' + str(count)
-        print (maquina)
+        cursor = conexao.cursor()      
+        maquina = 'sp0006pa' + str(count)        
         def ping(host):
 
             import subprocess, platform
@@ -24,11 +22,11 @@ while (True):
 
         if ping(maquina) == True:
             print ('Ok')
-            cursor.execute("UPDATE `layout` SET `status`='btn-success' WHERE pa = '"+maquina+"'")
+            cursor.execute("UPDATE `***` SET `status`='btn-success' WHERE pa = '"+maquina+"'")
             conexao.commit()
         else:
             print ('falhou')
-            cursor.execute("UPDATE `layout` SET `status`='btn-danger' WHERE pa = '"+maquina+"'")
+            cursor.execute("UPDATE `***` SET `status`='btn-danger' WHERE pa = '"+maquina+"'")
             conexao.commit()
         count += 1
         time.sleep(0.5)
